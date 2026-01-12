@@ -22,6 +22,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* Account for fixed header height (80px) + extra spacing */
 }
 
 body {
