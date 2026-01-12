@@ -1,0 +1,46 @@
+---
+import logoImage from '../resources/logo.png';
+
+const currentYear = new Date().getFullYear();
+
+const links = [
+  { href: '#about', label: 'O nás' },
+  { href: '#team', label: 'Náš tím' },
+  { href: '#services', label: 'Vyšetrenia' },
+  { href: '#contact', label: 'Kontakt' }
+];
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__container">
+      <div class="footer__content">
+        <div class="footer__logo">
+          <img src={logoImage.src} alt="Gyncentrum" class="footer__logo-img" />
+          <span>Gyncentrum</span>
+        </div>
+        <p>Nadštandardná starostlivosť poskytovaná s úsmevom</p>
+      </div>
+
+      <div class="footer__links">
+        <h4>Rýchle odkazy</h4>
+        <ul>
+          {links.map((link) => (
+            <li><a href={link.href}>{link.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="footer__contact">
+        <h4>Kontakt</h4>
+        <p><i class="fas fa-phone"></i> 0948 838 986</p>
+        <p><i class="fas fa-envelope"></i> ambulancia@gyncentrum.sk</p>
+        <p><i class="fas fa-map-marker-alt"></i> Einsteinova 25, Bratislava</p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; {currentYear} Gyncentrum. Všetky práva vyhradené.</p>
+    </div>
+  </div>
+</footer>

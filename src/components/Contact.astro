@@ -1,0 +1,73 @@
+---
+const contactInfo = [
+  {
+    icon: 'fa-map-marker-alt',
+    title: 'Adresa',
+    content: 'Digital Park II, blok A<br>Einsteinova 25<br>851 01 Bratislava',
+    isHTML: true
+  },
+  {
+    icon: 'fa-phone',
+    title: 'Telefón',
+    phones: ['0948 838 986', '0905 838 986', '0918 605 896']
+  },
+  {
+    icon: 'fa-envelope',
+    title: 'Email',
+    email: 'ambulancia@gyncentrum.sk'
+  },
+  {
+    icon: 'fa-clock',
+    title: 'Ordinačné hodiny',
+    content: 'Pondelok - Piatok<br>7:00 - 17:00',
+    isHTML: true
+  }
+];
+---
+
+<section class="contact section" id="contact">
+  <div class="container">
+    <div class="section__header">
+      <h2 class="section__title">Kontakt</h2>
+      <p class="section__subtitle">Sme tu pre vás, neváhajte nás kontaktovať</p>
+    </div>
+
+    <div class="contact__container">
+      <div class="contact__info">
+        {contactInfo.map((info) => (
+          <div class="contact__card">
+            <i class={`fas ${info.icon}`}></i>
+            <div>
+              <h3>{info.title}</h3>
+              {info.isHTML ? (
+                <p set:html={info.content} />
+              ) : info.phones ? (
+                <p>
+                  {info.phones.map((phone, index) => (
+                    <Fragment>
+                      <a href={`tel:+421${phone.replace(/\s/g, '').substring(1)}`}>{phone}</a>
+                      {index < info.phones.length - 1 && <br />}
+                    </Fragment>
+                  ))}
+                </p>
+              ) : info.email ? (
+                <p><a href={`mailto:${info.email}`}>{info.email}</a></p>
+              ) : null}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="contact__map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2661.9647856284436!2d17.1261!3d48.1704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c8ed0b6e26d7d%3A0x5a4c0a0e5b5b5a5a!2sEinsteinova%2025%2C%20851%2001%20Bratislava!5e0!3m2!1sen!2ssk!4v1234567890"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>

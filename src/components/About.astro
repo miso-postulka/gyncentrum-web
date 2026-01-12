@@ -1,0 +1,60 @@
+---
+import logoImage from '../resources/logo.png';
+
+const features = [
+  {
+    icon: 'fa-user-md',
+    title: 'Skúsení lekári',
+    description: '6 lekárov s dlhoročnou praxou'
+  },
+  {
+    icon: 'fa-hospital',
+    title: 'Moderné vybavenie',
+    description: 'Najnovšie diagnostické prístroje'
+  },
+  {
+    icon: 'fa-heart',
+    title: 'Individuálny prístup',
+    description: 'Starostlivosť šitá na mieru'
+  }
+];
+---
+
+<section class="about section" id="about">
+  <div class="container">
+    <div class="section__header">
+      <h2 class="section__title">O nás</h2>
+      <p class="section__subtitle">Komplexná zdravotná starostlivosť pre ženy všetkých vekových kategórií</p>
+    </div>
+
+    <div class="about__container">
+      <div class="about__image">
+        <img src={logoImage.src} alt="Gyncentrum" />
+      </div>
+      <div class="about__content">
+        <h3>Súkromná ambulancia gynekológie a pôrodníctva</h3>
+        <p>
+          Gyncentrum je moderná súkromná ambulancia založená v roku 2010 MUDr. Ľudovítom Janekom, PhD.
+          Poskytujeme komplexnú zdravotnú starostlivosť v oblasti gynekológie a pôrodníctva s dôrazom
+          na individuálny prístup ku každej pacientke.
+        </p>
+        <p>
+          Náš tím tvoria vysoko kvalifikovaní lekári a zdravotné sestry s dlhoročnými skúsenosťami.
+          Disponujeme moderným vybavením a najnovšími diagnostickými metódami.
+        </p>
+
+        <div class="about__features">
+          {features.map((feature) => (
+            <div class="feature">
+              <i class={`fas ${feature.icon}`}></i>
+              <div>
+                <h4>{feature.title}</h4>
+                <p>{feature.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

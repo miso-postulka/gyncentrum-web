@@ -1,0 +1,50 @@
+---
+import lusoImage from '../resources/luso.jpg';
+import mikiImage from '../resources/miki.jpg';
+import sestrickaImage from '../resources/sestricka.jpg';
+
+const teamMembers = [
+  {
+    name: 'MUDr. Ľudovít Janek, PhD.',
+    role: 'Riaditeľ ambulancie',
+    description: 'Špecialista v gynekológii a pôrodníctve',
+    image: lusoImage
+  },
+  {
+    name: 'Lekári špecialisti',
+    role: '6 lekárov',
+    description: 'Odborníci v gynekológii a pôrodníctve',
+    image: mikiImage
+  },
+  {
+    name: 'Zdravotné sestry',
+    role: '6 zdravotných sestier a pôrodných asistentiek',
+    description: 'Profesionálna ošetrovateľská starostlivosť',
+    image: sestrickaImage
+  }
+];
+---
+
+<section class="team section" id="team">
+  <div class="container">
+    <div class="section__header">
+      <h2 class="section__title">Náš tím</h2>
+      <p class="section__subtitle">Tím skúsených odborníkov pre vašu zdravotnú starostlivosť</p>
+    </div>
+
+    <div class="team__container">
+      {teamMembers.map((member) => (
+        <div class="team__member">
+          <div class="member__image">
+            <img src={member.image.src} alt={member.name} />
+          </div>
+          <div class="member__info">
+            <h3>{member.name}</h3>
+            <p class="member__role">{member.role}</p>
+            <p class="member__description">{member.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
