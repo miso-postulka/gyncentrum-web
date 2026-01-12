@@ -699,8 +699,20 @@ ul {
         gap: 2rem;
     }
 
+    .hero__content {
+        text-align: center;
+    }
+
     .hero__title {
         font-size: 2.2rem;
+    }
+
+    .about__content {
+        text-align: center;
+    }
+
+    .hours__content {
+        text-align: center;
     }
 
     .hero__stats {
@@ -761,6 +773,10 @@ ul {
         padding: 2rem 0;
     }
 
+    .hero__content {
+        text-align: center;
+    }
+
     .hero__title {
         font-size: 1.8rem;
     }
@@ -771,6 +787,7 @@ ul {
 
     .hero__buttons {
         flex-direction: column;
+        align-items: center;
     }
 
     .button {
@@ -780,6 +797,32 @@ ul {
 
     .hero__stats {
         grid-template-columns: 1fr;
+    }
+
+    .about__content {
+        text-align: center;
+    }
+
+    .about__content h3 {
+        text-align: center;
+    }
+
+    .about__content p {
+        text-align: center;
+    }
+
+    .feature {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .hours__content {
+        text-align: center;
+    }
+
+    .hours__content h2 {
+        text-align: center;
     }
 
     .services__container,
